@@ -26,8 +26,10 @@ export default function Temperature() {
         <div className="row">
           <div className="col-sm-7">
             <div className="date">
-              <Date date={weather.date} />
-              <span className="day"> Last dated: 18:14</span>
+              <span className="day">
+                {" "}
+                Last dated: <Date date={weather.date} />
+              </span>
               <br />
               <span className="text-capitalize">{weather.description}</span>
             </div>
