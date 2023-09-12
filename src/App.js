@@ -1,5 +1,4 @@
 import "./App.css";
-import Date from "./Date";
 import Weather from "./Weather";
 import Days from "./Days";
 import Icons from "./Icons";
