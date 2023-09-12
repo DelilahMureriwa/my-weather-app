@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Date from "./Date";
 
 export default function Temperature() {
   const [loaded, setLoaded] = useState(false);
@@ -9,6 +10,7 @@ export default function Temperature() {
     setLoaded(true);
     setWeather({
       temperature: response.data.main.temp,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -24,7 +26,7 @@ export default function Temperature() {
         <div className="row">
           <div className="col-sm-7">
             <div className="date">
-              Saturday, 02 September 2023
+              <Date date={weather.date} />
               <span className="day"> Last dated: 18:14</span>
               <br />
               <span className="text-capitalize">{weather.description}</span>
