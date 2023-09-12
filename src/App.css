@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.card {
+  width: 44rem;
+  margin: 30px auto;
+  margin-bottom: 0;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(223, 164, 164) 0%,
+    rgb(184, 150, 217) 90%
+  );
+  border: 1px solid rgba(126, 120, 120, 0.94);
+  border-radius: 16px !important;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 65px !important;
+  font-weight: 460;
+  color: #680747;
+  margin-top: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 0;
+  color: #680747;
+  font-weight: bold;
+  font-size: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+form {
+  margin-right: 30px;
+}
+button {
+  margin-left: 500px !important;
+  margin-top: 10px;
+  margin-bottom: 0;
+  display: block;
+  background-color: #885df1;
+  border: 1px solid #680747;
   color: white;
+  padding: 7px;
+  transition: all 200ms ease;
+  border-radius: 5px !important;
+}
+button:hover {
+  color: #680747;
+  background: white;
+  border: 1px solid #885df1;
+}
+.date {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 7px;
+  color: #fff;
+}
+#icon {
+  margin-left: 20px;
+  margin-top: 7px;
+  width: 100px;
 }
 
-.App-link {
-  color: #61dafb;
+.sunny-cloud {
+  font-size: 70px;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.emojis {
+  font-size: 30px;
+}
+.temp {
+  font-size: 70px;
+  color: #680747;
+  font-weight: 120px;
+  padding: 0;
+  margin-left: -20px;
+}
+.units {
+  position: relative;
+  top: -40px;
+  font-size: 20px;
+  color: #680747;
+}
+#forecast {
+  font-size: 17px;
+  color: #680747;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.forecast-temp {
+  font-weight: lighter;
+}
+
+#forecast-icon {
+  display: relative;
+  margin-left: -5px;
+}
+.appearance {
+  text-transform: capitalize;
 }
