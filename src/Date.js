@@ -6,7 +6,7 @@ export default function Date() {
       <div className="col-sm-7">
         <div className="date">
           Saturday, 02 September 2023
-          <span className="day"> 18:14</span>
+          <span className="day"> Last dated: 18:14</span>
           <br />
           <span className="appearance">Clear Sky</span>
         </div>
@@ -17,6 +17,7 @@ export default function Date() {
             type="text"
             className="form-control form-control-lg"
             placeholder="Enter a city..."
+            autoFocus="on"
           />
           <div className="form-group"></div>
         </form>
