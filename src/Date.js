@@ -16,7 +16,7 @@ export default function Date() {
           <input
             type="text"
             className="form-control form-control-lg"
-            placeholder="ENTER A CITY"
+            placeholder="Enter a city..."
           />
           <div className="form-group"></div>
         </form>

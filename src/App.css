@@ -95,3 +95,7 @@ button:hover {
 .appearance {
   text-transform: capitalize;
 }
+
+.owner {
+  margin-left: 400px;
+}

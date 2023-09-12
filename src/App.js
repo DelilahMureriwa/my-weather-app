@@ -25,6 +25,16 @@ export default function App() {
             <Degrees />
           </div>
         </div>
+        <br />
+        <a
+          href="https://github.com/DelilahMureriwa/my-weather-app"
+          target="_blank"
+          rel="noreferrer"
+          className="owner"
+        >
+          Open-source code
+        </a>
+        {""} ,by Delilah Mureriwa
       </div>
     </div>
   );
