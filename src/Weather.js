@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Date from "./Date";
+import FormatDate from "./FormatDate";
 
 export default function Temperature() {
   const [loaded, setLoaded] = useState(false);
@@ -27,10 +27,8 @@ export default function Temperature() {
           <div className="col-sm-7">
             <div className="date">
               <span className="day">
-                {" "}
-                Last dated: <Date date={weather.date} />
+                <FormatDate date={weather.date} />
               </span>
-              <br />
               <span className="text-capitalize">{weather.description}</span>
             </div>
           </div>
