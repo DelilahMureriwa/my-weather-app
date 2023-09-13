@@ -1,8 +1,5 @@
 import "./App.css";
 import Weather from "./Weather";
-import Days from "./Days";
-import Icons from "./Icons";
-import Degrees from "./Degrees";
 
 export default function App() {
   return (
@@ -12,11 +9,6 @@ export default function App() {
           <div className="card-body">
             <br />
             <Weather defaultCity="Harare" />
-            <br />
-            <br />
-            <Days />
-            <Icons />
-            <Degrees />
           </div>
         </div>
         <br />

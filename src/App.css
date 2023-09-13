@@ -52,10 +52,10 @@ button:hover {
   margin-left: 7px;
   color: #fff;
 }
-#icon {
-  margin-left: 20px;
-  margin-top: 7px;
-  width: 100px;
+.icon {
+  font-size: 40px;
+  display: relative;
+  margin-left: -5px;
 }
 
 .main-icon {
@@ -63,9 +63,6 @@ button:hover {
   margin-right: 20px;
 }
 
-.emojis {
-  font-size: 30px;
-}
 .temp {
   font-size: 70px;
   color: #680747;
@@ -79,20 +76,16 @@ button:hover {
   font-size: 20px;
   color: #680747;
 }
-#forecast {
+.forecast {
   font-size: 17px;
   color: #680747;
   font-weight: bold;
   margin-left: 10px;
 }
-.forecast-temp {
+.forecast .min {
   font-weight: lighter;
 }
 
-#forecast-icon {
-  display: relative;
-  margin-left: -5px;
-}
 .owner {
   margin-left: 600px;
 }
