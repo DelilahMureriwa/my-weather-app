@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormatDate from "./FormatDate";
 
-export default function Temperature() {
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState("");
 
@@ -19,6 +20,21 @@ export default function Temperature() {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "44288e4ba65ce5205a5a631d146eca67";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
   if (loaded) {
     return (
       <div>
@@ -33,14 +49,14 @@ export default function Temperature() {
             </div>
           </div>
           <div className="col-sm-5">
-            <form id="city-form">
+            <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 className="form-control form-control-lg"
                 placeholder="Enter a city..."
                 autoFocus="on"
+                onChange={handleCityChange}
               />
-              <div className="form-group"></div>
             </form>
           </div>
         </div>
@@ -72,9 +88,7 @@ export default function Temperature() {
       </div>
     );
   } else {
-    let apiKey = "44288e4ba65ce5205a5a631d146eca67";
-    let city = "Harare";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
+    search();
+    return "loading...";
   }
 }

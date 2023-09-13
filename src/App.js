@@ -11,7 +11,7 @@ export default function App() {
         <div className="card">
           <div className="card-body">
             <br />
-            <Weather />
+            <Weather defaultCity="Harare" />
             <br />
             <br />
             <Days />
