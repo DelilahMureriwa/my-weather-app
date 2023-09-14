@@ -1,98 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 export default function ForecastTemperature(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
   function displayForecast(response) {
-    console.log(response.data);
+    setLoaded(true);
+    setForecast(response.data.daily);
   }
 
-  let apiKey = "44288e4ba65ce5205a5a631d146eca67";
-  let longitude = props.coordinates.lon;
-  let latitude = props.coordinates.lat;
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayForecast);
-
-  return (
-    <div className="forecast">
-      <div className="row">
-        <div className="col-sm">
-          MON
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          TUE
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          WED
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          THU
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          FRI
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          SAT
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm">
-          SUN
-          <div className="icon" role="img" aria-label="icon">
-            🌤️
-          </div>
-          <div>
-            <span className="max">
-              29° <span className="min">9°</span>
-            </span>
+  if (loaded) {
+    return (
+      <div className="forecast">
+        <div className="row">
+          <div className="col-sm">
+            <div>
+              {forecast[0].dt}
+              <div className="icon">
+                <img
+                  src={`https://openweathermap.org/img/wn/${forecast[0].weather[0].icon}@2x.png`}
+                  alt="icon"
+                  width={70}
+                />
+              </div>
+              <div></div>
+              <span className="max">
+                {Math.round(forecast[0].temp.max)}°{" "}
+                <span className="min">
+                  {" "}
+                  {Math.round(forecast[0].temp.min)}°
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = "6f578b96aa9505bcce148ac22cb85794";
+    let lon = props.coordinates.lon;
+    let lat = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+
+    return null;
+  }
 }

@@ -33,7 +33,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "44288e4ba65ce5205a5a631d146eca67";
+    const apiKey = "6f578b96aa9505bcce148ac22cb85794";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -66,7 +66,7 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-sm-1.5">
             <div className="main-icon">
-              <img src={weather.icon} alt="weather-icon" />
+              <img src={weather.icon} alt="weather-icon" width="120" />
             </div>
           </div>
           <div className="col-sm-5 temp">
@@ -86,11 +86,11 @@ export default function Weather(props) {
           </div>
         </div>
         <br />
-        <ForecastTemperature coordinates={weather.coord} />
+        <ForecastTemperature coordinates={weather.coordinates} />
       </div>
     );
   } else {
     search();
-    return "loading...";
+    return null;
   }
 }
