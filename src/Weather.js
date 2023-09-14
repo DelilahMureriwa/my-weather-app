@@ -72,7 +72,7 @@ export default function Weather(props) {
           <div className="col-sm-5 temp">
             <WeatherTemperature celsius={weather.temperature} />
           </div>
-          <div className="col-4">
+          <div className="col-4 appearance">
             <ul>
               <li>
                 Humidity: <span className="humidity"></span>

@@ -1,6 +1,6 @@
 .card {
   width: 44rem;
-  margin: 30px auto;
+  margin: 100px auto;
   margin-bottom: 0;
   background: radial-gradient(
     circle at 10% 20%,
@@ -69,12 +69,17 @@ button:hover {
   font-weight: 120px;
   padding: 0;
   margin-left: -20px;
+  margin-top: 10px;
 }
 .units {
   position: relative;
   top: -40px;
   font-size: 20px;
   color: #680747;
+}
+
+.appearance {
+  margin-top: 20px;
 }
 .forecast {
   font-size: 17px;
