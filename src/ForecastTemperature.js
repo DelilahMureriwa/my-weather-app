@@ -18,6 +18,24 @@ export default function ForecastTemperature(props) {
           <div className="col-sm">
             <ForecastDay forecast={forecast[0]} />
           </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[1]} />
+          </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[2]} />
+          </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[3]} />
+          </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[4]} />
+          </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[5]} />
+          </div>
+          <div className="col-sm">
+            <ForecastDay forecast={forecast[6]} />
+          </div>
         </div>
       </div>
     );
