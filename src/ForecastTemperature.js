@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ForecastDay from "./ForecastDay";
 
 export default function ForecastTemperature(props) {
   let [loaded, setLoaded] = useState(false);
@@ -15,24 +16,7 @@ export default function ForecastTemperature(props) {
       <div className="forecast">
         <div className="row">
           <div className="col-sm">
-            <div>
-              {forecast[0].dt}
-              <div className="icon">
-                <img
-                  src={`https://openweathermap.org/img/wn/${forecast[0].weather[0].icon}@2x.png`}
-                  alt="icon"
-                  width={70}
-                />
-              </div>
-              <div></div>
-              <span className="max">
-                {Math.round(forecast[0].temp.max)}°{" "}
-                <span className="min">
-                  {" "}
-                  {Math.round(forecast[0].temp.min)}°
-                </span>
-              </span>
-            </div>
+            <ForecastDay forecast={forecast[0]} />
           </div>
         </div>
       </div>
