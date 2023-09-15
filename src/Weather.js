@@ -64,12 +64,12 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-1.5">
+          <div className="col-sm-1.5 main">
             <div className="main-icon">
               <img src={weather.icon} alt="weather-icon" width="120" />
             </div>
           </div>
-          <div className="col-sm-5 temp">
+          <div className="col-sm-5 temp main">
             <WeatherTemperature celsius={weather.temperature} />
           </div>
           <div className="col-4 appearance">

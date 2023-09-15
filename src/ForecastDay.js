@@ -10,7 +10,7 @@ export default function ForecastDay(props) {
     return days[day];
   }
   return (
-    <div>
+    <div className="forecast-day">
       {day()}
       <div className="icon">
         <img

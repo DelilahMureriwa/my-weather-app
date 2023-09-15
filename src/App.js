@@ -12,7 +12,7 @@ export default function App() {
           </div>
         </div>
         <br />
-        <footer>
+        <footer class="d-none d-md-block">
           <a
             href="https://github.com/DelilahMureriwa/my-weather-app"
             target="_blank"
