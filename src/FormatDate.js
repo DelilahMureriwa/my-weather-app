@@ -22,7 +22,7 @@ export default function FormatDate(props) {
   }
   return (
     <div>
-      Last dated: {day}, {hours}:{minutes}
+      Last updated: {day}, {hours}:{minutes}
     </div>
   );
 }
